@@ -149,12 +149,7 @@ header, footer {
   font-weight: bold;
 }
 
-
-
 .photos .container {
-  /*display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px; */
   display: flex;
   justify-content: center;   
   flex-wrap: wrap;
@@ -174,4 +169,29 @@ header, footer {
 
 .photos figure:hover {
   border: 1px solid black;
+}
+
+/*styling for the PhD*/
+
+.phd p {
+  padding-left: 10rem;
+}
+
+.phd p > a {
+  text-decoration: underline;
+  color: rebeccapurple;
+}
+
+.phd p > a:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+.phd p > a::after {
+  content: "➥";
+  color: black;
+}
+
+.phd p > a:visited {
+  color: rebeccapurple;
 }
