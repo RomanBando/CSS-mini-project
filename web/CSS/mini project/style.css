@@ -149,12 +149,29 @@ header, footer {
   font-weight: bold;
 }
 
+
+
+.photos .container {
+  /*display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px; */
+  display: flex;
+  justify-content: center;   
+  flex-wrap: wrap;
+
+}
+
 .photos img {
   max-width: 100%;
 }
 
-.photos .container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+.photos figure {
+  flex: 1 1 30%;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid white;
+}
+
+.photos figure:hover {
+  border: 1px solid black;
 }
