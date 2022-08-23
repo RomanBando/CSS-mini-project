@@ -1,0 +1,160 @@
+@font-face {
+  font-family: Merriweather;
+  src: url('fonts/Merriweather-Light.ttf');
+} 
+
+@font-face {
+  font-family: Raleway;
+  src: url('fonts/Raleway-Italic-VariableFont_wght.ttf');
+}
+/*General setup*/
+
+header {
+  font-family: Merriweather, serif;
+}
+
+body {
+  margin: 0 auto;
+  min-width: 800px;
+  max-width: 1200px;
+  font-family: Raleway, cursive;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+}
+
+/*Layout*/
+header h1 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul > li {
+  display: inline-block;
+  margin: 15px;
+}
+
+nav li > a {
+  display: block;
+  text-decoration: none;
+  padding: 15px;
+  width: 150px;
+  text-align: center;
+  color: black;
+}
+
+nav li > a:visited {
+  color: black;
+}
+
+main {
+  margin: 5px;
+  padding: 5px;
+}
+
+footer {
+  text-align: right;
+}
+
+header, footer {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+/*styling for the index*/
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.main img {
+  grid-column: 1;
+  grid-row: 2/5;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.main section {
+  grid-column: 2/8;
+  grid-row: 2/5;
+}
+
+.main section p > a {
+  text-decoration: underline;
+  color: rebeccapurple;
+}
+
+.main section p > a:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+.main section p > a::after {
+    content: "➥";
+    color: black;
+}
+
+.main section p > a:visited {
+  color: rebeccapurple;
+}
+
+/*styling for the map*/
+
+.map {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-area: 10px;
+}
+
+.map p {
+  grid-column: 6;
+  grid-row: 1;
+  justify-content: center;
+}
+
+.map iframe {
+  grid-column: 6;
+  grid-row: 2;
+}
+
+/*styling for the brightcode*/
+
+.brightcode p {
+  padding-left: 10rem;
+}
+
+.brightcode span {
+  font-weight: bold;
+}
+
+/*styling for the photos*/
+
+.photos p {
+  padding-left: 10rem;
+}
+
+.photos  span {
+  font-weight: bold;
+}
+
+.photos img {
+  max-width: 100%;
+}
+
+.photos .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
