@@ -1,11 +1,11 @@
 @font-face {
   font-family: Merriweather;
-  src: url('fonts/Merriweather-Light.ttf');
+  src: url('../fonts/Merriweather-Light.ttf');
 } 
 
 @font-face {
   font-family: Raleway;
-  src: url('fonts/Raleway-Italic-VariableFont_wght.ttf');
+  src: url('../fonts/Raleway-Italic-VariableFont_wght.ttf');
 }
 /*General setup*/
 
@@ -71,34 +71,31 @@ header, footer {
 /*styling for the index*/
 
 .main {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-}
-
-.main img {
-  grid-column: 1;
-  grid-row: 2/5;
-  height: 150px;
+  display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
-  padding: 1rem;
+}
+.main img {
+  max-width: 100%;
+}
+.main .avatar {
+  flex: 1;
+  width: 14rem;
+  height: 10rem;
+
+  background-image: url(../images/Roman-Bando-normal.png);
+  background-size: cover;
+
+  animation: glitch 3.75s infinite steps(1);
 }
 
 .main section {
-  grid-column: 2/8;
-  grid-row: 2/5;
+  flex: 6;
 }
 
 .main section p > a {
   text-decoration: underline;
   color: rebeccapurple;
-}
-
-.main section p > a:hover {
-  text-decoration: underline;
-  color: black;
 }
 
 .main section p > a::after {
@@ -110,23 +107,39 @@ header, footer {
   color: rebeccapurple;
 }
 
+.main span {
+    font-weight: bold;
+}
+
+/*styling the avatar*/
+
+@keyframes glitch {
+  0%, 55.1%, 100% {
+    background-image: url(../images/Roman-Bando-normal.png);
+    background-size: cover;
+  }
+  50% {
+    background-image: url(../images/Roman-Bando-glitch-1.png);
+    background-size: cover;
+  }
+  52.5% {
+    background-image: url(../images/Roman-Bando-glitch-2.png);
+    background-size: cover;
+  }
+  55% {
+    background-image: url(../images/Roman-Bando-glitch-3.png);
+    background-size: cover;
+  }
+}
+
 /*styling for the map*/
 
 .map {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-area: 10px;
-}
-
-.map p {
-  grid-column: 6;
-  grid-row: 1;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
-}
-
-.map iframe {
-  grid-column: 6;
-  grid-row: 2;
+  align-items: center;
 }
 
 /*styling for the brightcode*/
@@ -145,13 +158,14 @@ header, footer {
   padding-left: 10rem;
 }
 
-.photos  span {
+.photos span {
   font-weight: bold;
 }
 
 .photos .container {
   display: flex;
   justify-content: center;   
+  align-items: center;
   flex-wrap: wrap;
 
 }
@@ -161,14 +175,16 @@ header, footer {
 }
 
 .photos figure {
-  flex: 1 1 30%;
-  padding: 5px;
-  margin: 5px;
-  border: 1px solid white;
+  flex: 1 25%;
+  padding: 15px;
+  margin: 15px;
 }
 
-.photos figure:hover {
-  border: 1px solid black;
+.photos img:hover {
+  position: fixed;
+  top: 20vh;
+  left: 40vw;
+  width: 20%;
 }
 
 /*styling for the contact*/
