@@ -9,14 +9,15 @@
 }
 /*General setup*/
 
+* {
+  box-sizing: border-box;
+}
+
 header {
   font-family: Merriweather, serif;
 }
 
 body {
-  margin: 0 auto;
-  min-width: 800px;
-  max-width: 1200px;
   font-family: Raleway, cursive;
   font-size: 0.8rem;
   line-height: 1.6;
@@ -36,27 +37,16 @@ nav ul {
   margin: 0;
 }
 
-nav ul > li {
-  display: inline-block;
-  margin: 15px;
-}
-
 nav li > a {
   display: block;
   text-decoration: none;
   padding: 15px;
-  width: 150px;
   text-align: center;
   color: black;
 }
 
 nav li > a:visited {
   color: black;
-}
-
-main {
-  margin: 5px;
-  padding: 5px;
 }
 
 footer {
@@ -68,201 +58,32 @@ header, footer {
   border-bottom: 2px solid black;
 }
 
-/*styling for the index*/
-
-.main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.main img {
-  max-width: 100%;
-}
-.main .avatar {
-  flex: 1;
-  width: 14rem;
-  height: 10rem;
-
-  background-image: url(../images/Roman-Bando-normal.png);
-  background-size: cover;
-
-  animation: glitch 3.75s infinite steps(1);
-}
-
-.main section {
-  flex: 6;
-}
-
-.main section p > a {
-  text-decoration: underline;
-  color: rebeccapurple;
-}
-
-.main section p > a::after {
-    content: "➥";
-    color: black;
-}
-
-.main section p > a:visited {
-  color: rebeccapurple;
-}
-
-.main span {
-    font-weight: bold;
-}
-
-/*styling the avatar*/
-
-@keyframes glitch {
-  0%, 55.1%, 100% {
-    background-image: url(../images/Roman-Bando-normal.png);
-    background-size: cover;
+/* Tablets */
+@media screen and (min-width: 30em) and (max-width: 64em) {
+  nav ul {
+    display: flex;
+    flex-direction: row;
   }
-  50% {
-    background-image: url(../images/Roman-Bando-glitch-1.png);
-    background-size: cover;
+
+  nav li {
+    flex: 1;
+   }
+}
+
+/* Desktop */
+@media screen and (min-width: 64em) {
+  nav ul {
+    display: flex;
+    flex-direction: row;
   }
-  52.5% {
-    background-image: url(../images/Roman-Bando-glitch-2.png);
-    background-size: cover;
-  }
-  55% {
-    background-image: url(../images/Roman-Bando-glitch-3.png);
-    background-size: cover;
+
+  nav li {
+    flex: 1;
+   }
+
+  body {
+    margin: 0 auto;
+    min-width: 800px;
+    max-width: 1200px;
   }
 }
-
-/*styling for the map*/
-
-.map {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/*styling for the brightcode*/
-
-.brightcode p {
-  padding-left: 10rem;
-}
-
-.brightcode span {
-  font-weight: bold;
-}
-
-/*styling for the photos*/
-
-.photos p {
-  padding-left: 10rem;
-}
-
-.photos span {
-  font-weight: bold;
-}
-
-.photos .container {
-  display: flex;
-  justify-content: center;   
-  align-items: center;
-  flex-wrap: wrap;
-
-}
-
-.photos img {
-  max-width: 100%;
-}
-
-.photos figure {
-  flex: 1 25%;
-  padding: 15px;
-  margin: 15px;
-}
-
-.photos img:hover {
-  position: fixed;
-  top: 20vh;
-  left: 40vw;
-  width: 20%;
-}
-
-/*styling for the contact*/
-
-.contact label {
-  font-family: Merriweather, serif;
-  font-size: 0.8rem;
-}
-
-.contact textarea, .contact input {
-  font-family: Raleway, cursive;
-  font-size: 0.8rem;
-}
-
-/*form, layout*/
-
-.contact form {
-  padding-left: 10rem;
-  margin: 0, auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 6rem 2rem 2rem 2rem;
-  gap: 10px;
-}
-
-.contact .message {
-  grid-column: 1;
-  grid-row: 1/5;
-}
-
-.contact .from {
- grid-column: 2;
- grid-row: 2;
-}
-
-.contact .reply {
-  grid-column: 2;
-  grid-row: 3;
- }
-
- .contact .submit {
-  grid-column: 2;
-  grid-row: 4;
- }
-
-/*text area style*/
-.contact textarea {
-    width: 90%;
-    height: 80%;
-    padding: 10px;
-  }
-    
-.contact textarea, .contact input {
-  background: rgba(100, 100, 100, 0.2);
-  border-radius: 10px;
-  border: 1px solid gray;
-}
-
-.contact textarea:focus,.contact input:focus {
-  background: none;
-}
-
-.contact input {
-  width: 20rem;
- }
-
-/*button style*/
-
-.contact button {
-  height: 2rem;
-  background: none;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.contact button:focus, .contact button:hover {
-  background-color: black;
-  color: white;
-}
-
